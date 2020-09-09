@@ -1,6 +1,7 @@
 import json # Como era feito de forma anterior
 
-from django.core.serializers import serialize
+# from django.core.serializers import serialize
+# from django.core import serializers
 
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
@@ -55,6 +56,5 @@ class SerializedDetailedView(View):
 
 class SerializedListView(View):
     def get(self, request, *args, **kwargs):
-        # qs = Update.objects.all()
-        json_data = Update.objects.all().serialize()
-        return HttpResponse(json_data, content_type='application/json')
+        json_teste = Update.objects.all().serialize()
+        return HttpResponse(json_teste, content_type='application/json')
